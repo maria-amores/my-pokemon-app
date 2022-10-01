@@ -3,13 +3,13 @@ import './Pokemon.css';
 import PokemonBasicInfo from './PokemonBasicInfo';
 import PokemonStats from './PokemonStats';
 
-const Pokemon = () => {
+const Pokemon = ({ pokemonName = 'pikachu' }) => {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [pokInfo, setPokInfo] = useState();
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/pikachu').then(response =>
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(response =>
       response
         .json()
         .then(data => {
@@ -22,7 +22,7 @@ const Pokemon = () => {
           setHasError(true);
         })
     );
-  }, []);
+  }, [pokemonName]);
 
   if (isLoading) return <div>Loading information....</div>;
 
