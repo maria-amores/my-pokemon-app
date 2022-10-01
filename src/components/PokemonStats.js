@@ -1,4 +1,5 @@
 import { ResponsiveBullet } from '@nivo/bullet';
+import PropTypes from 'prop-types';
 
 const PokemonStats = ({ statsInfo }) => {
   let data = [];
@@ -28,6 +29,10 @@ const PokemonStats = ({ statsInfo }) => {
       )}
     </div>
   );
+};
+
+PokemonStats.propTypes = {
+  statsInfo: PropTypes.array
 };
 
 export default PokemonStats;

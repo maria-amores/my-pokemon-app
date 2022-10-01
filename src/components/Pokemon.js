@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import LoadingSpinner from './common/LoadingSpinner';
-import './Pokemon.scss';
 import PokemonBasicInfo from './PokemonBasicInfo';
 import PokemonStats from './PokemonStats';
+import './Pokemon.scss';
 
 const Pokemon = ({ pokemonName = 'pikachu' }) => {
-  console.log('🚀 ~ file: Pokemon.js ~ line 7 ~ Pokemon ~ pokemonName', pokemonName);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [pokInfo, setPokInfo] = useState();
@@ -45,6 +45,10 @@ const Pokemon = ({ pokemonName = 'pikachu' }) => {
       <PokemonStats statsInfo={pokInfo.stats} />
     </div>
   );
+};
+
+Pokemon.propTypes = {
+  pokemonName: PropTypes.string
 };
 
 export default Pokemon;
