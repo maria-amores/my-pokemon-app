@@ -19,6 +19,24 @@
   }
 }
 
+.pokemon-error {
+  display: flex;
+  height: 400px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: #cc0000;
+    font-size: 20px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+}
+
 @keyframes Pokemon-image-spin {
   from {
     transform: rotateY(0deg);

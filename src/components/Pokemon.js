@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import LoadingSpinner from './common/LoadingSpinner';
 import './Pokemon.scss';
 import PokemonBasicInfo from './PokemonBasicInfo';
 import PokemonStats from './PokemonStats';
@@ -25,10 +26,14 @@ const Pokemon = ({ pokemonName = 'pikachu' }) => {
     );
   }, [pokemonName]);
 
-  if (isLoading) return <div>Loading information....</div>;
+  if (isLoading) return <LoadingSpinner />;
 
   if (hasError)
-    return <div>There was an error fetching the Pokemon info. Please try again later...</div>;
+    return (
+      <div className="pokemon-error">
+        <p>There was an error getting the Pokemon info. Please try again later...</p>
+      </div>
+    );
 
   return (
     <div className="pokemon-container">
