@@ -10,3 +10,25 @@ export const isEmpty = value => {
 
   return false;
 };
+
+/**
+ * Converts the value in kilogram format
+ * @param {number} value to convert
+ * @returns {string}
+ */
+export const convertToWeightFormat = value => {
+  if (isEmpty(value)) return '0kg';
+
+  return `${(value / 10).toFixed(1)}kg`;
+};
+
+/**
+ * onverts the value in meters format
+ * @param {number} value to convert
+ * @returns {string}
+ */
+export const convertToHeightFormat = value => {
+  if (isEmpty(value)) return '0m';
+
+  return `${(value / 10).toFixed(1)}m`;
+};
