@@ -1,0 +1,16 @@
+.pokemon-container {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.pokemon-header {
+}
+
+.pokemon-header img {
+  object-fit: cover;
+  height: 300px;
+}
+
+.pokemon-table-info {
+  width: 100%;
+}
