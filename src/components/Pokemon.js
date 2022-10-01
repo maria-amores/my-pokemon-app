@@ -41,8 +41,10 @@ const Pokemon = ({ pokemonName = 'pikachu' }) => {
         <img src={pokInfo.sprites.front_default} alt={`Pokemon ${pokInfo.name}`}></img>
         <h1>{pokInfo.name}</h1>
       </section>
-      <PokemonBasicInfo pokemonInfo={pokInfo} />
-      <PokemonStats statsInfo={pokInfo.stats} />
+      <div className="pokemon-information">
+        <PokemonBasicInfo pokemonInfo={pokInfo} />
+        <PokemonStats statsInfo={pokInfo.stats} />
+      </div>
     </div>
   );
 };

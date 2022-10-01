@@ -1,3 +1,7 @@
+import PropTypes from 'prop-types';
+import { convertToHeightFormat, convertToWeightFormat } from '../utils/common';
+import './PokemonBasicInfo.scss';
+
 const PokemonBasicInfo = ({ pokemonInfo }) => {
   return (
     <table className="pokemon-table-info">
@@ -8,25 +12,25 @@ const PokemonBasicInfo = ({ pokemonInfo }) => {
         </tr>
         <tr>
           <td>Height</td>
-          <td>{pokemonInfo.height}</td>
+          <td>{convertToHeightFormat(pokemonInfo.height)}</td>
         </tr>
         <tr>
           <td>Weight</td>
-          <td>{pokemonInfo.weight}</td>
+          <td>{convertToWeightFormat(pokemonInfo.weight)}</td>
         </tr>
         <tr>
           <td>Abilities</td>
-          <td>
+          <td className="pokemon-abilities">
             {pokemonInfo.abilities.map(ability => (
-              <p key={`ability_${ability.ability.name}`}>{ability.ability.name}</p>
+              <span key={`ability_${ability.ability.name}`}>{ability.ability.name}</span>
             ))}
           </td>
         </tr>
         <tr>
           <td>Type</td>
-          <td>
+          <td className="pokemon-types">
             {pokemonInfo.types.map(type => (
-              <p key={`type${type.type.name}`}>{type.type.name}</p>
+              <span key={`type${type.type.name}`}>{type.type.name}</span>
             ))}
           </td>
         </tr>
@@ -34,4 +38,9 @@ const PokemonBasicInfo = ({ pokemonInfo }) => {
     </table>
   );
 };
+
+PokemonBasicInfo.propTypes = {
+  pokemonInfo: PropTypes.object
+};
+
 export default PokemonBasicInfo;
