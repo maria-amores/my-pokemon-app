@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Pokemon.css';
 import PokemonBasicInfo from './PokemonBasicInfo';
+import PokemonStats from './PokemonStats';
 
 const Pokemon = () => {
   const [hasError, setHasError] = useState(false);
@@ -21,7 +22,6 @@ const Pokemon = () => {
           setHasError(true);
         })
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) return <div>Loading information....</div>;
@@ -36,6 +36,7 @@ const Pokemon = () => {
         <h1>{pokInfo.name}</h1>
       </section>
       <PokemonBasicInfo pokemonInfo={pokInfo} />
+      <PokemonStats statsInfo={pokInfo.stats} />
     </div>
   );
 };

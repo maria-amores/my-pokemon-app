@@ -14,3 +14,7 @@
 .pokemon-table-info {
   width: 100%;
 }
+
+.pokemon-stats {
+  height: 300px;
+}
