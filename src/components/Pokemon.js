@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import './Pokemon.css';
+import './Pokemon.scss';
 import PokemonBasicInfo from './PokemonBasicInfo';
 import PokemonStats from './PokemonStats';
 
 const Pokemon = ({ pokemonName = 'pikachu' }) => {
+  console.log('🚀 ~ file: Pokemon.js ~ line 7 ~ Pokemon ~ pokemonName', pokemonName);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [pokInfo, setPokInfo] = useState();

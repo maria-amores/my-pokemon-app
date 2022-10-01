@@ -1,0 +1,29 @@
+.pokemon-container {
+  margin-left: 10px;
+  width: 100%;
+
+  .pokemon-header {
+    img {
+      object-fit: cover;
+      height: 300px;
+      //animation: Pokemon-image-spin infinite 2s linear;
+    }
+  }
+
+  .pokemon-table-info {
+    width: 100%;
+  }
+
+  .pokemon-stats {
+    height: 300px;
+  }
+}
+
+@keyframes Pokemon-image-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
