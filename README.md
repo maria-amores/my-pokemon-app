@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Pokemon app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application connect with the Pokemon API in order to get the Pokemons information. I hope you will enjoy it! :)
+
+<span><img alt="screenshot pokemon challenge" src="src/assets/images/pokemonAppScreenshot.png" width="400" ></span>
+
+**This project is a template for the challenge, you can change all the files you consider change**, it was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Pre-requisites
+
+- Docker
+- Git
+
+## How to run the app
+
+### First you need to install all dependencies:
+
+Inside project folder:
+
+'npm install'
+
+### Run the application
+
+Inside project folder
+
+'npm start'
 
 ## Available Scripts
 
