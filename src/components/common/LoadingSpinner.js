@@ -2,7 +2,7 @@ import './LoadingSpinner.scss';
 
 const LoadingSpinner = () => {
   return (
-    <div className="spinner-container">
+    <div className="spinner-container" data-testid="pokemon-spinner-container">
       <div className="loading-spinner"></div>
     </div>
   );

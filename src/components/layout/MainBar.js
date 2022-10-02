@@ -6,7 +6,7 @@ import './MainBar.scss';
 
 const MainBar = ({ onSearch }) => {
   return (
-    <header className="main-header">
+    <header className="main-header" data-testid="pokemon-main-header">
       <img src={logo} alt="Logo Pokemon"></img>
       <div className="main-search">
         <Search placeholder="Search your pokemon" onSearch={value => onSearch(value)} />

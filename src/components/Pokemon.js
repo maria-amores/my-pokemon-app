@@ -10,20 +10,25 @@ const Pokemon = ({ pokemonName = 'pikachu' }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [pokInfo, setPokInfo] = useState();
 
+  const getPokemon = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+      const pokemonData = await response.json();
+
+      if (pokemonData) {
+        setPokInfo(pokemonData);
+        setHasError(false);
+      }
+    } catch (error) {
+      setHasError(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(response =>
-      response
-        .json()
-        .then(data => {
-          setPokInfo(data);
-          setIsLoading(false);
-          setHasError(false);
-        })
-        .catch(err => {
-          setIsLoading(false);
-          setHasError(true);
-        })
-    );
+    getPokemon();
   }, [pokemonName]);
 
   if (isLoading) return <LoadingSpinner />;
@@ -36,7 +41,7 @@ const Pokemon = ({ pokemonName = 'pikachu' }) => {
     );
 
   return (
-    <div className="pokemon-container">
+    <div className="pokemon-container" data-testid="pokemon-container">
       <section className="pokemon-header">
         <img src={pokInfo.sprites.front_default} alt={`Pokemon ${pokInfo.name}`}></img>
         <h1>{pokInfo.name}</h1>
