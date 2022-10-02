@@ -1,6 +1,6 @@
 # Pokemon app
 
-This application connect with the Pokemon API in order to get the Pokemons information. I hope you will enjoy it! :)
+This application connects to the Pokemon API in order to get the Pokemons information. I hope you will enjoy it! :)
 
 <span><img alt="screenshot pokemon challenge" src="src/assets/images/pokemonAppScreenshot.png" width="400" ></span>
 
@@ -8,7 +8,6 @@ This application connect with the Pokemon API in order to get the Pokemons infor
 
 ## Pre-requisites
 
-- Docker
 - Git
 
 ## How to run the app
