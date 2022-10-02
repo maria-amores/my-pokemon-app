@@ -12,17 +12,36 @@ const PokemonStats = ({ statsInfo }) => {
     };
   });
 
+  const theme = {
+    fontSize: 14,
+    axis: {
+      ticks: {
+        line: {
+          stroke: '#ffffff',
+          strokeWidth: 0
+        },
+        text: {
+          fontSize: 6,
+          fill: '#ffffff'
+        }
+      }
+    }
+  };
+
   return (
     <div className="pokemon-stats">
       {data != null ? (
         <ResponsiveBullet
           data={data}
-          margin={{ top: 10, right: 20, bottom: 20, left: 80 }}
+          margin={{ top: 10, right: 20, bottom: 20, left: 105 }}
           maxValue={100}
           measureSize={1}
-          rangeColors="greens"
-          titleAlign="start"
-          titleOffsetX={-80}
+          measureColors="#FFDE00"
+          rangeColors="#f8f7f7"
+          spacing={15}
+          titleAlign="end"
+          titleOffsetX={-8}
+          theme={theme}
         />
       ) : (
         <></>
