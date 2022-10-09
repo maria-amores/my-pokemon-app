@@ -29,6 +29,7 @@ const Pokemon = ({ pokemonName = 'pikachu' }) => {
 
   useEffect(() => {
     getPokemon();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokemonName]);
 
   if (isLoading) return <LoadingSpinner />;

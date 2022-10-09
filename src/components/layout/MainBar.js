@@ -1,7 +1,7 @@
 import Search from 'antd/lib/input/Search';
 import PropTypes from 'prop-types';
 import logo from './../../assets/images/logo.png';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import './MainBar.scss';
 
 const MainBar = ({ onSearch }) => {
